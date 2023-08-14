@@ -1,0 +1,27 @@
+ALGORITHM Sum_distinct
+VAR
+    Set1: ARRAY_OF INTEGER[3, 1, 7, 9]; 
+    Set2 : ARRAY_OF INTEGER[2, 4, 1, 9, 3];
+    i,j: INTEGER
+    Sum: INTEGER := 0
+    
+BEGIN
+
+//Step1: Search and compare arrays for distinct elements in Set1, add them to variable Sum and update index //
+    FOR i FROM 0 TO Set1.length-1  STEP1 DO
+        IF (Set1[i]<>Set2[j]) THEN
+            Sum := Sum + Set1[i];
+            i := i + 1;
+        END_IF
+            END_FOR
+
+//Step2: Search and compare arrays for distinct elements in Set2, add them to variable Sum and update index //
+    FOR j FROM 0 TO Set2.length-1 STEP 1 DO
+        IF (Set2[j]<>Set1[i])
+            Sum := Sum + Set2[j];
+            j = j + 1;
+        END_IF
+            END_FOR
+//Step3:Display total sum of distinct elements
+            Write(Sum)
+END
